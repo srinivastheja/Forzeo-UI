@@ -1,5 +1,12 @@
 # Forzeo UI (Vite + React + TypeScript + MUI)
 
+
+# What is Forzeo
+**FORZEO is an AI-era analytics platform that helps brands measure, understand, and improve their visibility across AI search engines—Google SGE, ChatGPT, Perplexity, Bing Copilot, Gemini, etc.
+**
+
+
+Forzeo-UI
 A starter template with Vite, React 18, TypeScript, React Router v6, and Material UI v5.
 
 ## Features
