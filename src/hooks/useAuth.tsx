@@ -1,12 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { authService } from '../services/auth';
-
-type User = { id: string; email: string; name?: string } | null;
+import { authService, type User } from '../services/auth';
 
 type AuthContextValue = {
     user: User;
     login: (email: string, password: string) => Promise<void>;
     signup: (email: string, password: string) => Promise<void>;
+    loginWithGoogle: (credentialResponse: any) => Promise<void>;
     logout: () => void;
     loading: boolean;
 };
@@ -33,13 +32,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setUser(res.user);
     };
 
+    const loginWithGoogle = async (credentialResponse: any) => {
+        const res = await authService.loginWithGoogle(credentialResponse);
+        setUser(res.user);
+    };
+
     const logout = () => {
         authService.logout();
         setUser(null);
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, signup, logout, loading }}>{children}</AuthContext.Provider>
+        <AuthContext.Provider value={{ user, login, signup, loginWithGoogle, logout, loading }}>{children}</AuthContext.Provider>
     );
 };
 

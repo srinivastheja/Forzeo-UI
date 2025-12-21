@@ -68,7 +68,7 @@ const Sidebar: React.FC = () => {
                                 },
                             }}
                         >
-                            <ListItemIcon>{icon}</ListItemIcon>
+                            <ListItemIcon sx={{ color: '#A6ABA8' }}>{icon}</ListItemIcon>
                             <ListItemText primary={label} />
                         </ListItem>
                     ))}

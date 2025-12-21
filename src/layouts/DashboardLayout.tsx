@@ -9,7 +9,7 @@ const DashboardLayout: React.FC = () => {
         <Box sx={{ display: 'flex', minHeight: '100vh' }}>
             <TopAppBar />
             <Sidebar />
-            <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8 }}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8, backgroundColor: '#F1F2F7', minHeight: '100vh' }}>
                 <Outlet />
             </Box>
         </Box>
